@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const HeaderContainer = styled.header`
     width: 100%;
     height: 131px;
-    background-color: green;
+    background-color:rgb(35, 192, 4);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,6 +23,11 @@ export const Logo = styled.img`
     height: 160px;
     margin-bottom: 1%;
 
+    @media (max-width: 1024px) {
+        width: 200px;
+        height: 140px;
+    }
+
     @media (max-width: 768px) {
         width: 180px;
         height: 120px;
@@ -31,6 +36,11 @@ export const Logo = styled.img`
     @media (max-width: 480px) {
         width: 150px;
         height: 100px;
+    }
+
+    @media (max-width: 320px) {
+        width: 120px;
+        height: 80px;
     }
 `;
 

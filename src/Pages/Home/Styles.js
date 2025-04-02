@@ -8,6 +8,7 @@ export const Container = styled.div`
   align-items: center;
   padding: 20px;
   width: 100%;
+  background-color: aliceblue;
 `;
 
 export const StyledCarousel = styled(Carousel)`
@@ -22,6 +23,25 @@ export const StyledCarousel = styled(Carousel)`
   }
 `;
 
+export const TextContainer = styled.div`
+  width: 90%;
+  max-width: 800px;
+  background-color: #fff;
+  color: #000;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  text-align: justify;
+  font-size: 18px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
+`;
 export const Botao = styled.div`
   width: 118px;
   height: 61px;
