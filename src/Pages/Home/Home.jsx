@@ -1,14 +1,12 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Container, StyledCarousel, Botao } from "./Styles";
+import { Container, StyledCarousel} from "./Styles";
 import ImagemTartaruga from "../../Assets/ImagensCarrossel/Minecraft.jpg"
 import ImagemSherek from "../../Assets/ImagensCarrossel/Sherek.jpeg"
 import ImagemDog from "../../Assets/ImagensCarrossel/Dog.jpg"
-import { StyleBotaoPadrao } from "../../Components/BotaoPadrao/Styles";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const navigate = useNavigate();
   return (
     <Container>
       <StyledCarousel
@@ -41,11 +39,6 @@ const Home = () => {
           <p className="legend">Dog</p>
         </div>
       </StyledCarousel>
-      <Botao>
-        <StyleBotaoPadrao onClick={() => navigate("/login")}>
-        Fazer login
-      </StyleBotaoPadrao>
-      </Botao>
       
     </Container>
   );

@@ -8,9 +8,6 @@ export default function Header({ showNav }) {
       <Logo src={logo} alt="Logo" />
       {showNav && (
         <Nav>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/perfil">Perfil</NavLink>
-          <NavLink to="/usuarios">Usuários</NavLink>
         </Nav>
       )}
     </HeaderContainer>
