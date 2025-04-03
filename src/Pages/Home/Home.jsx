@@ -1,46 +1,16 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Container, StyledCarousel, TextContainer} from "./Styles";
-import ImagemTartaruga from "../../Assets/ImagensCarrossel/Minecraft.jpg"
-import ImagemSherek from "../../Assets/ImagensCarrossel/Sherek.jpeg"
-import ImagemDog from "../../Assets/ImagensCarrossel/Dog.jpg"
+import abobora from "../../Assets/ImagensCarrossel/abobora.jpg"
+import milho from "../../Assets/ImagensCarrossel/milho.jpg"
+import quiabo from "../../Assets/ImagensCarrossel/quiabo.webp"
 import { Titulo } from "../../Components/Titulo/Styles";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   return (
     <Container>
-      <StyledCarousel
-        showThumbs={false}
-        infiniteLoop
-        autoPlay
-        interval={3000}
-        showStatus={false}
-        emulateTouch
-      >
-        <div>
-          <img
-            src={ImagemTartaruga}
-            
-          />
-          <p className="legend">Minecraft</p>
-        </div>
-        <div>
-          <img
-            src={ImagemSherek}
-            
-          />
-          <p className="legend">Sherek</p>
-        </div>
-        <div>
-          <img
-            src={ImagemDog}
-            alt="Slide 3"
-          />
-          <p className="legend">Dog</p>
-        </div>
-      </StyledCarousel>
-      <Titulo>Família: O Abrigo do Coração</Titulo>
+      <Titulo>Fazenda Quati</Titulo>
       <TextContainer>
       
 Família é mais do que laços de sangue; é a essência do amor, do cuidado e da conexão que nos fortalece ao longo da vida. É onde encontramos abrigo nos dias difíceis e alegria nos momentos felizes.
@@ -54,6 +24,37 @@ Nem sempre é perfeita, nem sempre é fácil, mas a família é o porto seguro q
 Família é lar, é raiz, é afeto. E o maior presente que podemos dar uns aos outros é cultivar esse amor todos os dias.
 
       </TextContainer>
+      
+      <StyledCarousel
+        showThumbs={false}
+        infiniteLoop
+        autoPlay
+        interval={3000}
+        showStatus={false}
+        emulateTouch
+      >
+        <div>
+          <img
+            src={abobora}
+            
+          />
+          <p className="legend">Abobora</p>
+        </div>
+        <div>
+          <img
+            src={quiabo}
+            
+          />
+          <p className="legend">Quiabo</p>
+        </div>
+        <div>
+          <img
+            src={milho}
+            
+          />
+          <p className="legend">Milho</p>
+        </div>
+      </StyledCarousel>
     </Container>
   );
 };

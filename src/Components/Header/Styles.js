@@ -1,47 +1,28 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+export const LogoContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 11%; /* Define um tamanho fixo */
+    padding-left: 2%;
+`;
+
 export const HeaderContainer = styled.header`
     width: 100%;
-    height: 131px;
-    background-color:rgb(35, 192, 4);
+    height: 135px;
+    background-color:rgb(0, 0, 0);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 5%;
-
-    @media (max-width: 768px) {
-        height: 100px;
-        flex-direction: column;
-        align-items: center;
-        padding: 10px 0;
-    }
+   
 `;
 
 export const Logo = styled.img`
-    width: 232px;
-    height: 160px;
-    margin-bottom: 1%;
-
-    @media (max-width: 1024px) {
-        width: 200px;
-        height: 140px;
-    }
-
-    @media (max-width: 768px) {
-        width: 180px;
-        height: 120px;
-    }
-
-    @media (max-width: 480px) {
-        width: 150px;
-        height: 100px;
-    }
-
-    @media (max-width: 320px) {
-        width: 120px;
-        height: 80px;
-    }
+    width: 90%;
+    height: 90%;
+    margin-left: 2%;
 `;
 
 export const Nav = styled.nav`
