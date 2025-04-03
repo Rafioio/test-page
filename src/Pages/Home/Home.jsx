@@ -1,9 +1,10 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Container, StyledCarousel, TextContainer} from "./Styles";
+import { Container, FlexRowContainer, StyledCarousel, TextContainer, ImageContainer} from "./Styles";
 import abobora from "../../Assets/ImagensCarrossel/abobora.jpg"
 import milho from "../../Assets/ImagensCarrossel/milho.jpg"
 import quiabo from "../../Assets/ImagensCarrossel/quiabo.webp"
+import vo from "../../Assets/Images/vo.jpeg"
 import { Titulo } from "../../Components/Titulo/Styles";
 import { useNavigate } from "react-router-dom";
 
@@ -11,17 +12,25 @@ const Home = () => {
   return (
     <Container>
       <Titulo>Fazenda Quati</Titulo>
+      <FlexRowContainer>
+        <TextContainer>
+          olá
+        </TextContainer>
+        <ImageContainer>
+  <img 
+    src={vo} 
+    alt="Adilson Geraldo dos Santos Campelo" 
+    loading="lazy" // Carregamento otimizado
+  />
+</ImageContainer>
+      </FlexRowContainer>
       <TextContainer>
       
-Família é mais do que laços de sangue; é a essência do amor, do cuidado e da conexão que nos fortalece ao longo da vida. É onde encontramos abrigo nos dias difíceis e alegria nos momentos felizes.
+      A Fazenda Quati é o reflexo do trabalho árduo e da visão de futuro de quem sempre acreditou no potencial da terra. Sua história começou com Adilson Geraldo dos Santos Campelo, que iniciou sua jornada como carvoeiro. No início, parte do terreno foi herdada e outra parte adquirida por Adilson, que, com muito esforço, expandiu suas terras e viu uma oportunidade além da produção de carvão.
 
-Na família, aprendemos nossas primeiras palavras, damos nossos primeiros passos e descobrimos o verdadeiro significado da cumplicidade. Não importa se é pequena ou grande, se é de laços biológicos ou de afinidades escolhidas—família é aquele lugar onde podemos ser nós mesmos, sem medo de julgamentos.
+Com o tempo, ele investiu na pecuária, transformando a fazenda em um espaço produtivo e próspero. O crescimento foi resultado de anos de dedicação e aprimoramento, tornando a Fazenda Quati uma referência no setor agropecuário.
 
-Os abraços de uma mãe, os conselhos de um pai, as brincadeiras entre irmãos, os ensinamentos dos avós... São esses momentos que constroem nossa essência e deixam marcas eternas em nossa história.
-
-Nem sempre é perfeita, nem sempre é fácil, mas a família é o porto seguro que nos lembra que, independentemente dos desafios da vida, nunca estamos sozinhos. No fim do dia, é o amor que nos mantém unidos, superando qualquer distância, desentendimento ou tempo.
-
-Família é lar, é raiz, é afeto. E o maior presente que podemos dar uns aos outros é cultivar esse amor todos os dias.
+Hoje, sob a administração de Júlio César Campelo, a fazenda mantém suas atividades no agro e sobrevive também por meio do arrendamento de terras. A Fazenda Quati é mais do que um pedaço de terra; é o legado de uma família que soube transformar desafios em oportunidades, garantindo sua continuidade no campo.
 
       </TextContainer>
       
