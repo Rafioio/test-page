@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Titulo = styled.h1`
+export const Title = styled.h1`
     display: flex;
     flex-direction: column;
     justify-content: center;            

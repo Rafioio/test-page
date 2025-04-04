@@ -1,17 +1,20 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Container, FlexRowContainer, StyledCarousel, TextContainer, ImageContainer} from "./Styles";
+import { Container} from "./Styles";
 import abobora from "../../Assets/ImagensCarrossel/abobora.jpg"
 import milho from "../../Assets/ImagensCarrossel/milho.jpg"
 import quiabo from "../../Assets/ImagensCarrossel/quiabo.webp"
 import vo from "../../Assets/Images/vo.jpeg"
-import { Titulo } from "../../Components/Titulo/Styles";
-import { useNavigate } from "react-router-dom";
+import { Title } from "../../Components/Title/Styles";
+import { StyledCarousel } from "../../Components/Carousel/Styles";
+import { ImageContainer } from "../../Components/ImageContainer/Styles";
+import { FlexRowContainer } from "../../Components/FlexRowContainer/Stiles";
+import { TextContainer } from "../../Components/TextConteiner/Styles";
 
 const Home = () => {
   return (
     <Container>
-      <Titulo>Fazenda Quati</Titulo>
+      <Title>Fazenda Quati</Title>
       <FlexRowContainer>
         <TextContainer>
           olá

@@ -1,3 +1,13 @@
+import React from "react";
+import { FooterContainer,LogoContainer, Logo} from "./Styles";
+import logo from "../../Assets/Logo/logo.svg";
+
 export default function Footer() {
-    return <h3>Footer</h3>;
+    return (
+        <FooterContainer>
+            <LogoContainer>
+                          <Logo src={logo} alt="Logo" />
+                  </LogoContainer>
+        </FooterContainer>
+    );
 }

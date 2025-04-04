@@ -5,7 +5,7 @@ const GlobalStyles = createGlobalStyle`
   /* Importação das fontes */
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
-
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
   /* Estilo geral */
   * {
     margin: 0;
