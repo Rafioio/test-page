@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 export const TextContainer = styled.div`
   width: 90%; /* Largura maior para melhor leitura */
-  max-width: 1000px; /* Limite máximo para telas grandes */
+  max-width: 1120px; /* Limite máximo para telas grandes */
   background-color: #fff;
   color: #000;
   padding: 25px;
-  margin: 2% auto; /* Centraliza o container */
+  margin: auto; /* Centraliza o container */
   border-radius: 12px;
   text-align: justify;
   font-size: clamp(16px, 2vw, 18px); /* Tamanho de fonte responsivo */

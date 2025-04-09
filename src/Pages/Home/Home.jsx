@@ -18,7 +18,9 @@ const Home = () => {
     <Container>
       <Title>Fazenda Quati</Title>
       <FlexRowContainer>
-        <TextContainer>{HomeTexts.texto1}</TextContainer>
+        <TextContainer>
+          <p>{HomeTexts.texto1}</p>
+          </TextContainer>
         <ImageContainer>
   <img 
     src={vo} 
@@ -28,6 +30,7 @@ const Home = () => {
 </ImageContainer>
       </FlexRowContainer>
       
+      <TextContainer>{HomeTexts.texto12}</TextContainer>
 
       <FlexRowContainer>
         <ImageContainer>
