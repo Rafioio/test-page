@@ -1,17 +1,18 @@
+// PessoaBloco/Styles.js
 import styled from "styled-components";
 
-export const FlexRowContainer = styled.div`
+export const BlockPersonContainer = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 2rem;
-  padding: 20px;
   width: 100%;
   max-width: 1200px;
+  padding: 20px;
   margin: 0 auto;
+  background-color: #d89028 ;
 
   @media (max-width: 768px) {
     flex-direction: column;
-    gap: 1rem;
   }
 `;

@@ -1,50 +1,39 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Container} from "./Styles";
-import abobora from "../../Assets/ImagensCarrossel/abobora.jpg"
-import milho from "../../Assets/ImagensCarrossel/milho.jpg"
-import quiabo from "../../Assets/ImagensCarrossel/quiabo.webp"
-import vo from "../../Assets/Images/vo.jpeg"
-import tio from "../../Assets/Images/tio.jpg"
+import { Container } from "./Styles";
+import abobora from "../../Assets/ImagensCarrossel/abobora.jpg";
+import milho from "../../Assets/ImagensCarrossel/milho.jpg";
+import quiabo from "../../Assets/ImagensCarrossel/quiabo.webp";
+import vo from "../../Assets/Images/vo.jpeg";
+import tio from "../../Assets/Images/tio.jpg";
 import { Title } from "../../Components/Title/Styles";
 import { StyledCarousel } from "../../Components/Carousel/Styles";
-import { ImageContainer } from "../../Components/ImageContainer/Styles";
-import { FlexRowContainer } from "../../Components/FlexRowContainer/Stiles";
 import { TextContainer } from "../../Components/TextConteiner/Styles";
 import { HomeTexts } from "../../data/HomeTexts";
+import BlockPerson from "../../Components/BlockPerson/BlockPerson";
 
 const Home = () => {
   return (
     <Container>
       <Title>Fazenda Quati</Title>
-      <FlexRowContainer>
-        <TextContainer>
-          <p>{HomeTexts.texto1}</p>
-          </TextContainer>
-        <ImageContainer>
-  <img 
-    src={vo} 
-    alt="Adilson Geraldo dos Santos Campelo" 
-    loading="lazy" // Carregamento otimizado
-  />
-</ImageContainer>
-      </FlexRowContainer>
-      
+
+      <BlockPerson
+        texto={HomeTexts.texto1}
+        imagem={vo}
+        alt="Adilson Geraldo dos Santos Campelo"
+      />
+
       <TextContainer>{HomeTexts.texto12}</TextContainer>
 
-      <FlexRowContainer>
-        <ImageContainer>
-  <img 
-    src={tio} 
-    alt="Julio Cesar Campelo" 
-    loading="lazy" // Carregamento otimizado
-  />
-</ImageContainer>
-      <TextContainer>{HomeTexts.texto2}</TextContainer>
-      </FlexRowContainer>
+      <BlockPerson
+        texto={HomeTexts.texto2}
+        imagem={tio}
+        alt="Julio Cesar Campelo"
+        inverter
+      />
 
-      
       <TextContainer>{HomeTexts.texto3}</TextContainer>
+
       <StyledCarousel
         showThumbs={false}
         infiniteLoop
@@ -54,24 +43,15 @@ const Home = () => {
         emulateTouch
       >
         <div>
-          <img
-            src={abobora}
-            
-          />
-          <p className="legend">Abobora</p>
+          <img src={abobora} />
+          <p className="legend">Abóbora</p>
         </div>
         <div>
-          <img
-            src={quiabo}
-            
-          />
+          <img src={quiabo} />
           <p className="legend">Quiabo</p>
         </div>
         <div>
-          <img
-            src={milho}
-            
-          />
+          <img src={milho} />
           <p className="legend">Milho</p>
         </div>
       </StyledCarousel>
