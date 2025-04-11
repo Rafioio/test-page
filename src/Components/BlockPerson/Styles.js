@@ -12,7 +12,9 @@ export const BlockPersonContainer = styled.div`
   margin: 0 auto;
   background-color: #d89028 ;
 
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     flex-direction: column;
+    padding: 5px;
+
   }
 `;

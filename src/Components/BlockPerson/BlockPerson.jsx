@@ -7,7 +7,7 @@ import {BlockPersonContainer} from "./Styles";
 const PessoaBloco = ({ texto, imagem, alt, inverter = false }) => {
   return (
     <BlockPersonContainer>
-    <FlexRowContainer style={{ flexDirection: inverter ? "row-reverse" : "row" }}>
+    <FlexRowContainer >
       <TextContainer>
         <p>{texto}</p>
       </TextContainer>

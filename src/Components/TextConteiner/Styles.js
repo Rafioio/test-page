@@ -16,8 +16,8 @@ export const TextContainer = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
   word-wrap: break-word; /* Evita overflow de texto */
 
-  @media (max-width: 480px) {
-    width: 92%;
+    @media (max-width: 700px) { 
+    max-width: 100%;
     padding: 15px;
     border-radius: 8px;
     text-align: left; /* Justificado pode ficar ruim em telas pequenas */

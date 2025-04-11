@@ -11,11 +11,13 @@ import { StyledCarousel } from "../../Components/Carousel/Styles";
 import { TextContainer } from "../../Components/TextConteiner/Styles";
 import { HomeTexts } from "../../data/HomeTexts";
 import BlockPerson from "../../Components/BlockPerson/BlockPerson";
-
+import { Spacer } from "../../Components/Spacer/Spacer";
 const Home = () => {
   return (
     <Container>
       <Title>Fazenda Quati</Title>
+
+      <Spacer height="4rem" />
 
       <BlockPerson
         texto={HomeTexts.texto1}
@@ -23,7 +25,11 @@ const Home = () => {
         alt="Adilson Geraldo dos Santos Campelo"
       />
 
+      <Spacer height="2rem" />
+
       <TextContainer>{HomeTexts.texto12}</TextContainer>
+
+      <Spacer height="2rem" />
 
       <BlockPerson
         texto={HomeTexts.texto2}
@@ -32,7 +38,11 @@ const Home = () => {
         inverter
       />
 
+      <Spacer height="2rem" />
+
       <TextContainer>{HomeTexts.texto3}</TextContainer>
+
+      <Spacer height="2rem" />
 
       <StyledCarousel
         showThumbs={false}
@@ -55,6 +65,9 @@ const Home = () => {
           <p className="legend">Milho</p>
         </div>
       </StyledCarousel>
+
+      <Spacer height="2rem" />
+
     </Container>
   );
 };

@@ -11,4 +11,9 @@ export const ImageContainer = styled.div`
     border-radius: 12px;
     object-fit: cover;
   }
+  @media (max-width: 700px) {
+    width: 98%;
+    height: auto;
+    hyphens: auto; 
+  }
 `;
