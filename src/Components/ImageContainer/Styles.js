@@ -4,7 +4,7 @@ export const ImageContainer = styled.div`
   flex: 1;
   display: flex;
   justify-content: center;
-
+  max-width: 1300px;
   img {
     width: 100%;
     height: auto;
@@ -12,7 +12,7 @@ export const ImageContainer = styled.div`
     object-fit: cover;
   }
   @media (max-width: 700px) {
-    width: 98%;
+    width: 100%;
     height: auto;
     hyphens: auto; 
   }

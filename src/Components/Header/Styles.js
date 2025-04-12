@@ -13,7 +13,6 @@ export const HeaderContainer = styled.header`
   padding: 15px 5%;
 
   @media (max-width: 768px) {
-    flex-direction: column;
     padding: 15px 3%;
     gap: 20px;
   }
