@@ -53,12 +53,6 @@ const Home = () => {
 
       <TextContainer>{HomeTexts.texto3}</TextContainer>
 
-      <Spacer height="2rem" />
-
-      <ImageContainer> 
-      <img src={fazenda} alt={"fazenda"} loading="lazy" />
-      </ImageContainer>
-
       <Spacer height="10rem" />
 
       <StyledCarousel
@@ -82,6 +76,16 @@ const Home = () => {
           <p className="legend">Milho</p>
         </div>
       </StyledCarousel>
+
+      <Spacer height="2rem" />
+
+        <TextContainer>{HomeTexts.texto3}</TextContainer>
+
+      <Spacer height="2rem" />
+
+        <ImageContainer> 
+         <img src={fazenda} alt={"fazenda"} loading="lazy" />
+        </ImageContainer>
 
       <Spacer height="10rem" />
 
