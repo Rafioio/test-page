@@ -1,4 +1,4 @@
-import React from "react";
+
 import { FooterContainer,LogoContainer, Logo} from "./Styles";
 import logo from "../../Assets/Logo/logo.svg";
 

@@ -1,5 +1,5 @@
-import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import 'leaflet/dist/leaflet.css'; // Adicione esta linha
 import { Container } from "./Styles";
 import abobora from "../../Assets/ImagensCarrossel/abobora.jpg";
 import milho from "../../Assets/ImagensCarrossel/milho.jpg";
@@ -15,6 +15,9 @@ import { HomeTexts } from "../../data/HomeTexts";
 import BlockPerson from "../../Components/BlockPerson/BlockPerson";
 import { Spacer } from "../../Components/Spacer/Spacer";
 import { ImageContainer } from "../../Components/ImageContainer/Styles";
+import Map from '../../Components/Map/Map';
+// Importe os componentes do React Leaflet
+
 const Home = () => {
   return (
     <Container>
@@ -37,7 +40,7 @@ const Home = () => {
       <Spacer height="2rem" />
 
       <ImageContainer> 
-      <img src={casa} alt={"casa"} loading="lazy" />
+        <img src={casa} alt={"casa"} loading="lazy" />
       </ImageContainer>
 
       <Spacer height="2rem" />
@@ -79,14 +82,15 @@ const Home = () => {
 
       <Spacer height="2rem" />
 
-        <TextContainer>{HomeTexts.texto3}</TextContainer>
+      <TextContainer>{HomeTexts.texto3}</TextContainer>
 
       <Spacer height="2rem" />
 
-        <ImageContainer> 
-         <img src={fazenda} alt={"fazenda"} loading="lazy" />
-        </ImageContainer>
-
+      <ImageContainer> 
+        <img src={fazenda} alt={"fazenda"} loading="lazy" />
+      </ImageContainer>
+      <Spacer height="5rem" />
+      <Map />
       <Spacer height="10rem" />
 
     </Container>

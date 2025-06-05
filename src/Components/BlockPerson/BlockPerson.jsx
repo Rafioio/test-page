@@ -1,5 +1,4 @@
 // src/Components/PessoaBloco/index.jsx
-import React from "react";
 import { FlexRowContainer } from "../FlexRowContainer/Stiles";
 import { TextContainer } from "../TextConteiner/Styles";
 import { ImageContainer } from "../ImageContainer/Styles";

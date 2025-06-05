@@ -1,32 +1,46 @@
+
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+import icon from 'leaflet/dist/images/marker-icon.png';
+import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 
-// Corrige o ícone padrão que pode não aparecer em alguns setups
-import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
-import markerIcon from 'leaflet/dist/images/marker-icon.png';
-import markerShadow from 'leaflet/dist/images/marker-shadow.png';
-
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: markerIcon2x,
-  iconUrl: markerIcon,
-  shadowUrl: markerShadow,
+// Configuração do ícone
+const DefaultIcon = L.icon({
+  iconUrl: icon,
+  shadowUrl: iconShadow,
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
 });
 
-function Mapa() {
-  const position = [-23.5505, -46.6333]; // São Paulo
+L.Marker.prototype.options.icon = DefaultIcon;
 
+// Componente principal
+const Map = () => {
+  const position = [-19.026315360742426, -43.91017115987215];
+  
   return (
-    <MapContainer center={position} zoom={13} style={{ height: "200px", width: "50%" }}>
-      <TileLayer
-        attribution='&copy; OpenStreetMap contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      <Marker position={position}>
-        <Popup>Você está aqui! 🗺️</Popup>
-      </Marker>
-    </MapContainer>
+    <div style={{ height: '700px', width: '80%' }}>
+      <MapContainer 
+        center={position} 
+        zoom={28} 
+        style={{ height: '100%', width: '100%' }}
+      >
+        <TileLayer
+          url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+          attribution='&copy; Esri Satellite'
+        />
+        <Marker position={position}>
+          <Popup>
+            <strong>Fazenda Quati</strong>
+            <br />
+            <small>Localização da propriedade</small>
+          </Popup>
+        </Marker>
+      </MapContainer>
+    </div>
   );
-}
+};
 
-export default Mapa;
+export default Map;
