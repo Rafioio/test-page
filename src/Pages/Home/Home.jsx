@@ -1,5 +1,5 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import 'leaflet/dist/leaflet.css'; // Adicione esta linha
+import 'leaflet/dist/leaflet.css';
 import { Container } from "./Styles";
 import abobora from "../../Assets/ImagensCarrossel/abobora.jpg";
 import milho from "../../Assets/ImagensCarrossel/milho.jpg";
@@ -16,48 +16,90 @@ import BlockPerson from "../../Components/BlockPerson/BlockPerson";
 import { Spacer } from "../../Components/Spacer/Spacer";
 import { ImageContainer } from "../../Components/ImageContainer/Styles";
 import Map from '../../Components/Map/Map';
-// Importe os componentes do React Leaflet
+import { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import axios from 'axios';
+
+// Estilo para o container das coordenadas
+const CoordinatesContainer = styled.div`
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  font-size: 14px;
+  max-width: 300px;
+`;
+
+const AddressText = styled.p`
+  margin-top: 8px;
+  font-size: 13px;
+  color: #333;
+  word-break: break-word;
+`;
 
 const Home = () => {
+  const [address, setAddress] = useState(null);
+  const [loadingAddress, setLoadingAddress] = useState(false);
+
+  // Coordenadas fixas da Fazenda Quati
+  const fixedCoordinates = {
+    lat: -19.026315360742426,
+    lng: -43.91017115987215
+  };
+
+  // Função para obter o endereço a partir das coordenadas fixas
+  const fetchAddress = async () => {
+    setLoadingAddress(true);
+    try {
+      const response = await axios.get(
+        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${fixedCoordinates.lat}&lon=${fixedCoordinates.lng}&zoom=18&addressdetails=1`
+      );
+      
+      if (response.data.display_name) {
+        setAddress(response.data.display_name);
+      }
+    } catch (error) {
+      console.error("Erro ao buscar endereço:", error);
+    } finally {
+      setLoadingAddress(false);
+    }
+  };
+
+  // Busca o endereço quando o componente é montado
+  useEffect(() => {
+    fetchAddress();
+  }, []);
+
   return (
     <Container>
       <Spacer height="6rem" />
-
       <Title>Fazenda Quati</Title>
-
       <Spacer height="7rem" />
-
       <BlockPerson
         texto={HomeTexts.texto1}
         imagem={vo}
         alt="Adilson Geraldo dos Santos Campelo"
       />
-
       <Spacer height="2rem" />
-
       <TextContainer>{HomeTexts.texto12}</TextContainer>
-
       <Spacer height="2rem" />
-
       <ImageContainer> 
         <img src={casa} alt={"casa"} loading="lazy" />
       </ImageContainer>
-
       <Spacer height="2rem" />
-
       <BlockPerson
         texto={HomeTexts.texto2}
         imagem={tio}
         alt="Julio Cesar Campelo"
         inverter
       />
-
       <Spacer height="2rem" />
-
       <TextContainer>{HomeTexts.texto3}</TextContainer>
-
       <Spacer height="10rem" />
-
       <StyledCarousel
         showThumbs={false}
         infiniteLoop
@@ -67,25 +109,21 @@ const Home = () => {
         emulateTouch
       >
         <div>
-          <img src={abobora} />
+          <img src={abobora} alt="Abóbora" />
           <p className="legend">Abóbora</p>
         </div>
         <div>
-          <img src={quiabo} />
+          <img src={quiabo} alt="Quiabo" />
           <p className="legend">Quiabo</p>
         </div>
         <div>
-          <img src={milho} />
+          <img src={milho} alt="Milho" />
           <p className="legend">Milho</p>
         </div>
       </StyledCarousel>
-
       <Spacer height="2rem" />
-
       <TextContainer>{HomeTexts.texto3}</TextContainer>
-
       <Spacer height="2rem" />
-
       <ImageContainer> 
         <img src={fazenda} alt={"fazenda"} loading="lazy" />
       </ImageContainer>
@@ -93,6 +131,23 @@ const Home = () => {
       <Map />
       <Spacer height="10rem" />
 
+      {/* Componente de exibição das coordenadas e endereço */}
+      <CoordinatesContainer>
+        <div><strong>Localização da Fazenda Quati:</strong></div>
+        <div>Latitude: {fixedCoordinates.lat.toFixed(6)}</div>
+        <div>Longitude: {fixedCoordinates.lng.toFixed(6)}</div>
+        
+        {loadingAddress ? (
+          <AddressText>Buscando endereço...</AddressText>
+        ) : address ? (
+          <>
+            <div style={{marginTop: '8px'}}><strong>Endereço:</strong></div>
+            <AddressText>{address}</AddressText>
+          </>
+        ) : (
+          <AddressText>Endereço não disponível</AddressText>
+        )}
+      </CoordinatesContainer>
     </Container>
   );
 };
