@@ -1,5 +1,6 @@
 
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer_, TextContainer, WrapperContainer } from './Styles';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import icon from 'leaflet/dist/images/marker-icon.png';
@@ -21,25 +22,32 @@ const Map = () => {
   const position = [-19.026315360742426, -43.91017115987215];
   
   return (
-    <div style={{ height: '700px', width: '80%' }}>
-      <MapContainer 
-        center={position} 
-        zoom={28} 
-        style={{ height: '100%', width: '100%' }}
-      >
-        <TileLayer
-          url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
-          attribution='&copy; Esri Satellite'
-        />
-        <Marker position={position}>
-          <Popup>
-            <strong>Fazenda Quati</strong>
-            <br />
-            <small>Localização da propriedade</small>
-          </Popup>
-        </Marker>
-      </MapContainer>
-    </div>
+    <WrapperContainer>
+    
+      <MapContainer_>
+        <MapContainer 
+          center={position} 
+          zoom={28} 
+          style={{ height: '100%', width: '100%' }}
+        >
+          <TileLayer
+            url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+            attribution='&copy; Esri Satellite'
+          />
+          <Marker position={position}>
+            <Popup>
+              <strong>Fazenda Quati</strong>
+              <br />
+              <small>Localização da propriedade</small>
+            </Popup>
+          </Marker>
+        </MapContainer>
+      </MapContainer_>
+      
+      <TextContainer>
+
+      </TextContainer>
+    </WrapperContainer>
   );
 };
 

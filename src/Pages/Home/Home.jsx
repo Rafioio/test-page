@@ -1,6 +1,6 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import 'leaflet/dist/leaflet.css';
-import { Container } from "./Styles";
+import { Container} from "./Styles";
 import abobora from "../../Assets/ImagensCarrossel/abobora.jpg";
 import milho from "../../Assets/ImagensCarrossel/milho.jpg";
 import quiabo from "../../Assets/ImagensCarrossel/quiabo.webp";
@@ -16,34 +16,15 @@ import BlockPerson from "../../Components/BlockPerson/BlockPerson";
 import { Spacer } from "../../Components/Spacer/Spacer";
 import { ImageContainer } from "../../Components/ImageContainer/Styles";
 import Map from '../../Components/Map/Map';
-import { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import { useEffect } from 'react';
+// import styled from 'styled-components';
 import axios from 'axios';
 
-// Estilo para o container das coordenadas
-const CoordinatesContainer = styled.div`
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 10px 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-  z-index: 1000;
-  font-size: 14px;
-  max-width: 300px;
-`;
 
-const AddressText = styled.p`
-  margin-top: 8px;
-  font-size: 13px;
-  color: #333;
-  word-break: break-word;
-`;
 
 const Home = () => {
-  const [address, setAddress] = useState(null);
-  const [loadingAddress, setLoadingAddress] = useState(false);
+  // const [address, setAddress] = useState(null);
+  // const [loadingAddress, setLoadingAddress] = useState(false);
 
   // Coordenadas fixas da Fazenda Quati
   const fixedCoordinates = {
@@ -53,19 +34,19 @@ const Home = () => {
 
   // Função para obter o endereço a partir das coordenadas fixas
   const fetchAddress = async () => {
-    setLoadingAddress(true);
+    // setLoadingAddress(true);
     try {
       const response = await axios.get(
         `https://nominatim.openstreetmap.org/reverse?format=json&lat=${fixedCoordinates.lat}&lon=${fixedCoordinates.lng}&zoom=18&addressdetails=1`
       );
       
       if (response.data.display_name) {
-        setAddress(response.data.display_name);
+        // setAddress(response.data.display_name);
       }
     } catch (error) {
       console.error("Erro ao buscar endereço:", error);
     } finally {
-      setLoadingAddress(false);
+      // setLoadingAddress(false);
     }
   };
 
@@ -86,17 +67,18 @@ const Home = () => {
       />
       <Spacer height="2rem" />
       <TextContainer>{HomeTexts.texto12}</TextContainer>
-      <Spacer height="2rem" />
+      <Spacer height="10rem" />
       <ImageContainer> 
         <img src={casa} alt={"casa"} loading="lazy" />
       </ImageContainer>
-      <Spacer height="2rem" />
+      <Spacer height="10rem" />
       <BlockPerson
         texto={HomeTexts.texto2}
         imagem={tio}
         alt="Julio Cesar Campelo"
         inverter
       />
+
       <Spacer height="2rem" />
       <TextContainer>{HomeTexts.texto3}</TextContainer>
       <Spacer height="10rem" />
@@ -128,11 +110,16 @@ const Home = () => {
         <img src={fazenda} alt={"fazenda"} loading="lazy" />
       </ImageContainer>
       <Spacer height="5rem" />
+      <TextContainer>
+
+      </TextContainer>
+      <Container>
       <Map />
+      </Container>
       <Spacer height="10rem" />
 
       {/* Componente de exibição das coordenadas e endereço */}
-      <CoordinatesContainer>
+      {/* <CoordinatesContainer>
         <div><strong>Localização da Fazenda Quati:</strong></div>
         <div>Latitude: {fixedCoordinates.lat.toFixed(6)}</div>
         <div>Longitude: {fixedCoordinates.lng.toFixed(6)}</div>
@@ -147,7 +134,7 @@ const Home = () => {
         ) : (
           <AddressText>Endereço não disponível</AddressText>
         )}
-      </CoordinatesContainer>
+      </CoordinatesContainer> */}
     </Container>
   );
 };
